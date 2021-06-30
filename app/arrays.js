@@ -4,11 +4,17 @@
 // output: ['is', 'a', 'split', 'sentence.', 'This']
 
 function rearranger(arr) {
+    let a = arr
+    // this makes a new array named a
+    let b = arr.shift()
+    // shift moves the very first index removes it and makes it its own object named b
+    a.push(b)
+    // push puts the item at the end of the new array named a
+    // console.log(a)
+    return a
 }
 
-
 // ------------------------------------------
-
 
 // 2. Given an array of numbers, return the largest number in the array.
 // Example:
@@ -16,7 +22,28 @@ function rearranger(arr) {
 // output: 42
 
 function largestNum(arr) {
+    let max = arr[0];
+    let object = {
+        largestNum: 0,
+        numberOfOccurances: 0,
+    }
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+            object.numberOfOccurances = 0
+        }
+        if (arr[i] == max) {
+            object.largestNum = arr[i];
+            object.numberOfOccurances++;
+        }
+    }
+    if (object.numberOfOccurances > 1) {
+        return object
+    }
+    return max
+
 }
+
 
 
 // ------------------------------------------
@@ -28,6 +55,13 @@ function largestNum(arr) {
 // output: [16, 8, 4, 28]
 
 function elemsTimesLength(arr) {
+    let newArr = []
+    for (let i = 0; i < arr.length; i++) {
+        newArr.push(arr[i] * arr.length)
+
+    }
+}
+return max
 }
 
 
